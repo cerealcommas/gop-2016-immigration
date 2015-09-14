@@ -1,0 +1,338 @@
+<% @title = "You created a structured Serve project!" %>
+
+<div style="width: 100%; height: 400px; background-color: red;">
+<h1>Hi this is a graphic</h1>
+</div>
+<script>
+$(document).ready(function () {
+  $("#select-menu").change(function () {
+    d3.selectAll(".candidate")
+    	.style("display", "none");
+	
+	$("#trump")
+    		.fadeIn();
+  })
+});
+
+
+//global vars
+var canvas = d3.select("article");
+var graphic = canvas.append("div").attr("id", "graphic");
+
+//the data
+var candidates = [
+	{
+		"slug":"bush",
+		"name":"Jeb Bush",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"carson",
+		"name":"Ben Carson",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"christie",
+		"name":"Chris Christie",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"cruz",
+		"name":"Ted Cruz",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"fiorina",
+		"name":"Carly Fiorina",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"gilmore",
+		"name":"Jim Gilmore",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"graham",
+		"name":"Lindsey Graham",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"huckabee",
+		"name":"Mike Huckabee",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"jindal",
+		"name":"Bobby Jindal",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"kasich",
+		"name":"John Kasich",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"pataki",
+		"name":"George Pataki",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"paul",
+		"name":"Rand Paul",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"rubio",
+		"name":"Marco Rubio",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"santorum",
+		"name":"Rick Santorum",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"trump",
+		"name":"Donald Trump",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	},
+	{
+		"slug":"walker",
+		"name":"Scott Walker",
+		"platform":"lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+	}
+];
+
+
+//Define d
+var d = function(d) { return d; };
+var slug = function(d) { return d.slug; };
+var filename = function(d) { return d.filename; };
+
+//Draw head buttons
+var headsMenu = graphic
+	.append("div")
+	.attr("id", "heads-menu")
+	.classed("desktop-only", true)
+	.selectAll("button")
+		.data(candidates)
+			.enter()
+				.append("button")
+				.attr("style", function(d) { return "background-image: url(/images/" + d.slug + ".png);"; })
+				.attr("class", function(d) { return "btn-" + d.slug });
+//Draw select menu
+var selectMenu = graphic
+	.append("div")
+	.attr("id", "select-menu")
+	.classed("mobile-only", true)
+	.append("select")
+	.selectAll("option")
+		.data(candidates)
+		.enter()
+			.append("option")
+			.attr("value", function(d) { return d.slug; })
+			.text(function(d) { return d.name; });
+
+//Create candidate box
+var candidateBox = graphic.append("div").attr("id", "candidate-container");
+
+//Draw candidate div from data in box
+var candidate = candidateBox
+	.selectAll("div")
+	.data(candidates)
+	.enter()
+		.append("div")
+		.attr("class", "candidate")
+		.attr("id", function(d) { return d.slug; });
+
+//Add candidate's name to div
+candidate
+	.append("h1")
+	.text(function(d) { return d.name; });
+
+//Add image
+candidate
+	.append("img")
+	.classed("mobile-only", true)
+	.attr("src", function(d) { return "/images/" + d.slug + ".png"; });
+
+//Add candidate's platform to div
+candidate
+	.append("p")
+	.text(function(d) { return d.platform; });
+
+//Button function
+/*function candidateToggle(whatever) {
+	d3.selectAll(".candidate")
+		.style("display", "none");
+
+	$(whatever).fadeIn();
+};
+
+$(".btn-trump").on("click"), function() { 
+	candidateToggle.call("#trump");
+};
+
+
+*/
+
+$(".btn-bush").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#bush").fadeIn();
+		console.log("#AllInForJeb");
+	});
+
+$(".btn-carson").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#carson").fadeIn();
+		console.log("Heal + Inspire + Revive");
+	});
+
+$(".btn-christie").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#christie").fadeIn();
+		console.log("Telling it like it is");
+	});
+
+$(".btn-cruz").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#cruz").fadeIn();
+		console.log("Reigniting the Promise of America");
+	});
+
+$(".btn-fiorina").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#fiorina").fadeIn();
+		console.log("New Possibilities. Real Leadership.");
+	});
+
+$(".btn-gilmore").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#gilmore").fadeIn();
+	});
+
+$(".btn-graham").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#graham").fadeIn();
+		console.log("Ready To Be Commander-in-Chief On Day One");
+	});
+
+$(".btn-huckabee").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#huckabee").fadeIn();
+		console.log("Hope to Higher Ground");
+	});
+
+$(".btn-jindal").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#jindal").fadeIn();
+	});
+
+$(".btn-kasich").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#kasich").fadeIn();
+		console.log("Kasich for Us");
+	});
+
+$(".btn-pataki").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#pataki").fadeIn();
+		console.log("People over politics");
+	});
+
+$(".btn-paul").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#paul").fadeIn();
+		console.log("Defeat the Washington machine. Unleash the American dream.");
+	});
+
+$(".btn-rubio").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#rubio").fadeIn();
+		console.log("A New American Century");
+	});
+
+$(".btn-santorum").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#santorum").fadeIn();
+		console.log("Restore the American Dream for hardworking families");
+	});
+
+$(".btn-trump").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.select(this).style("opacity", "1");
+
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#trump").fadeIn();
+		console.log("Make America Great Again!");
+	});
+
+$(".btn-walker").on("click", function() { 
+		d3.selectAll("button").style("opacity", ".5");
+		d3.select(this).style("opacity", "1");
+		d3.selectAll(".candidate")
+			.style("display", "none");
+
+		$("#walker").fadeIn();
+		console.log("Reform. Growth. Safety.");
+	});
+</script>

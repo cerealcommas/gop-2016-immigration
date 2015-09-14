@@ -1,0 +1,100 @@
+//
+// Application Stylesheet
+//
+
+@import "partials/base";
+@import "partials/content";
+@import "partials/layout";
+
+#graphic {
+	width: 100%;
+}
+
+#heads-menu {
+	//background-color: $rep-red;
+	text-align: center;
+}
+
+button {
+	height: 100px;
+	width: 12.5%;
+	background-color: transparent;
+	border: none;
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	opacity: .5;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:active {
+	opacity: 1;
+	outline: 0;
+}
+
+button:focus {
+	opacity: 1;
+	outline:0;
+}
+
+#select-menu {
+	width: 100%;
+	text-align: center;
+}
+
+#select-menu select {
+	width: 80%;
+}
+
+#candidate-container {
+	width: 100%;
+}
+
+.candidate {
+	//display: none;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	//background-color: $rep-red;
+	//color: $white;
+	height: 200px;
+	display: none;
+}
+
+.candidate h1 {
+	font-family: $serif-font-family;
+	font-weight: 100;
+	//color: $white !important;
+	//border: 1px solid green;
+}
+
+.candidate img {
+	height: 100px;
+	width: 100px;
+	display: block;
+	float: left;
+}
+
+.candidate p {
+	//border: 1px solid violet;
+}
+
+// For desktop:
+@media all and (min-width: 500px) {
+    .desktop-only {
+        display: inline;
+    }
+    .mobile-only {
+        //display: none;
+    }
+}
+// For mobile:
+@media all and (max-width: 500px) {
+    .mobile-only {
+        display: inline;
+    }
+    .desktop-only {
+        display: none;
+    }
+}
