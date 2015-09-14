@@ -3,17 +3,18 @@
 //
 
 
-header[role=banner] {
-  background: $banner-color;
-  @include background-image(
-    linear-gradient(rgba(black, 0) 0%, rgba(black, 0) 80%, rgba(black, 0.15) 100%),
-    radial-gradient(30% 50px, $banner-color, darken($banner-color, 11) 400px)
-  );
-  padding: 20px $body-margin-x;
+header {
+  background: $white;
   position: relative;
+  padding: 1px $body-margin-x;
   
   a { @include basic-link(mix($banner-color, white, 20%), $hover: white, $decoration: "plain"); }
   
+  h1 {
+    color: $bodytext-black;
+    font-weight: bold;
+    font-size: 2em;
+  }
   .action-link {
     position: absolute;
     right: $body-margin-x;

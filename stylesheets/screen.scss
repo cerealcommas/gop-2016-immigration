@@ -85,8 +85,12 @@ button:focus {
     .desktop-only {
         display: inline;
     }
+
+    img.mobile-only {
+    	display: none;
+    }
     .mobile-only {
-        //display: none;
+        display: none;
     }
 }
 // For mobile:
@@ -97,4 +101,21 @@ button:focus {
     .desktop-only {
         display: none;
     }
+}
+
+.wrapper {
+  width: 100%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+  background-color: #f6f5f2;
+  border: dashed 1px gray;
+  margin: 1em 0;
+}
+
+.wrapper:after {
+  padding-top: 30%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
 }

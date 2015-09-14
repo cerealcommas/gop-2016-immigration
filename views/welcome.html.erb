@@ -1,10 +1,12 @@
 <% @title = "You created a structured Serve project!" %>
 
-<div style="width: 100%; height: 400px; background-color: red;">
-<h1>Hi this is a graphic</h1>
+<div class="wrapper">
+<h1>&nbsp;</h1>
 </div>
 <script>
 $(document).ready(function () {
+  $("#bush").show();
+
   $("#select-menu").change(function () {
     d3.selectAll(".candidate")
     	.style("display", "none");
