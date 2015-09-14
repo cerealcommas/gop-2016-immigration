@@ -1,4 +1,4 @@
-<% @title = "You created a structured Serve project!" %>
+<% @title = "Republican candidates on abortion" %>
 
 <div class="wrapper">
 <h1>&nbsp;</h1>
@@ -120,7 +120,7 @@ var headsMenu = graphic
 		.data(candidates)
 			.enter()
 				.append("button")
-				.attr("style", function(d) { return "background-image: url(/images/" + d.slug + ".png);"; })
+				.attr("style", function(d) { return "background-image: url(images/" + d.slug + ".png);"; })
 				.attr("class", function(d) { return "btn-" + d.slug });
 //Draw select menu
 var selectMenu = graphic
@@ -156,7 +156,7 @@ candidate
 candidate
 	.append("img")
 	.classed("mobile-only", true)
-	.attr("src", function(d) { return "/images/" + d.slug + ".png"; });
+	.attr("src", function(d) { return "images/" + d.slug + ".png"; });
 
 //Add candidate's platform to div
 candidate

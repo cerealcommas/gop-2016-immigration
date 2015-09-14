@@ -366,3 +366,7 @@ button:focus {
   display: block;
   content: '';
 }
+
+select {
+  font-size: 50px;
+}
