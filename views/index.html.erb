@@ -1,28 +1,3 @@
-<style>
-.swiper-container {
-	width: 100%;
-	height: 100px;
-	background-color: #d64946;
-	margin: 1em 0;
-	display: none;
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-	text-align: center;
-	min-width: 100px !important;
-}
-
-.swiper-slide button {
-	min-width: 100px;
-	width: 100%;
-}
-
-.swiper-scrollbar {
-
-}
-</style>
-
 <script>
 //global vars
 // Global config
@@ -128,42 +103,6 @@ var d = function(d) { return d; };
 var slug = function(d) { return d.slug; };
 var filename = function(d) { return d.filename; };
 
-if (document.body.clientWidth < 500) {
-	//render swiper
-	var swipeContainer = graphic
-		.append("div").classed("swiper-container", true);
-
-	var swipeWrapper = swipeContainer
-		.append("div").classed("swiper-wrapper", true);
-
-	var swipeScrollbar = swipeContainer
-		.append("div").classed("swiper-scrollbar", true);
-
-	//draw head buttons
-	var candidateSwiper = swipeWrapper
-		.selectAll(".swiper-slide")
-			.data(candidates)
-				.enter()
-					.append("div")
-					.attr("class", "swiper-slide")
-					.append("button")
-						.attr("style", function(d) { return "background-image: url(images/candidates/" + d.slug + ".png);"; })
-					.attr("class", function(d) { return "btn-" + d.slug });
-	//render slides					
-	var swiper = new Swiper ('.swiper-container', {
-		// Optional parameters
-		direction: 'horizontal',
-		freeMode: true,
-		spaceBetween: 3,
-		loop: true,
-		scrollbar: '.swiper-scrollbar',
-		slidesPerView: 3,
-		freeModeMomentum: false,
-		grabCursor: true,
-		scrollbarHide: false
-	});
-};
-
 var headsMenu = graphic
 	.append("div")
 	.attr("id", "heads-menu")
@@ -205,30 +144,15 @@ candidate
 	.text(function(d) { return d.name; });
 
 //Add image
-/*candidate
+candidate
 	.append("img")
 	.classed("mobile-only", true)
-	.attr("src", function(d) { return "images/candidates/" + d.slug + ".png"; });*/
+	.attr("src", function(d) { return "images/candidates/" + d.slug + ".png"; });
 
 //Add candidate's platform to div
 candidate
 	.append("p")
 	.text(function(d) { return d.platform; });
-
-//Button function
-/*function candidateToggle(whatever) {
-	d3.selectAll(".candidate")
-		.style("display", "none");
-
-	$(whatever).fadeIn();
-};
-
-$(".btn-trump").on("click"), function() { 
-	candidateToggle.call("#trump");
-};
-
-
-*/
 
 jQuery.fn.fadeThenSlideToggle = function(speed, easing, callback) {
   if (this.is(":hidden")) {
@@ -499,4 +423,14 @@ $(".btn-walker").on("click", function() {
 		$("#walker").fadeIn();
 		console.log("Reform. Growth. Safety.");
 	});
+
+//get value
+$("select").on("change", function() {
+	//hide all candidats
+	$(".candidate").hide();
+	//show this candidate
+	$("#" + this.value)
+		.fadeIn();
+})
+
 </script>
