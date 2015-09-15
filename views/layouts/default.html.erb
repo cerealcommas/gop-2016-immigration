@@ -1,32 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-<base href="http://mashgraphics-stage.s3-website-us-east-1.amazonaws.com/mashgraphics/graphics/2015-09-16-gop-immigration/" />
-<meta name="description" content="">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="robots" content="noindex" />
-		<title>Mashable : Graphic : <%= @title %></title>
-		<link rel="stylesheet" href="stylesheets/screen.css">
-		<!--[if IE]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+	<!--<base href="http://mashgraphics-stage.s3-website-us-east-1.amazonaws.com/mashgraphics/graphics/2015-09-16-gop-immigration/" />-->
+
+	<!-- meta tags -->
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="noindex" />
+	
+	<title>Mashable : Graphic : <%= @title %></title>
+
+	<!-- stylsheets -->
+	<link rel="stylesheet" href="stylesheets/screen.css">
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="stylesheets/swiper.min.css">
+
 </head>
 <body>
-	<!-- d3, jquery, topojson, queue -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<!-- javascripts -->
+	<script src="javascripts/d3.min.js"></script>
+	<script src="javascripts/queue.min.js"></script>
+	<script src="javascripts/jquery-2.1.4.min.js"></script>
+	<script src="javascripts/swiper.jquery.min.js"></script>
+	
 	<!-- mashable fonts -->
 	<script src="//use.typekit.net/grm1wok.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	
 	<header>
-		<h1>Lorem ipsum dolor sit amet</h1>
-		<p class="byline">By JUANA SUMMERS and SERGIO HERNANDEZ</p>
-		<h2>Lorem ipsum dolor sit amet</h2>
+		<h1><%= @title %></h1>
+		<p class="byline">By <span style="text-transform: uppercase;">Juana Summers</span> and <span style="text-transform: uppercase;">Sergio Hernandez</span></p>
+		<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum orci sit amet purus imperdiet, ut varius nunc ultrices. Duis pellentesque erat urna, et ornare ligula finibus eu.</h2>
 	</header>
 	
 	<section role="main">
@@ -34,15 +42,15 @@
 	</section>
 	
 	<footer>
-		<div class="footnotes">
+		<!--<div class="footnotes">
         		<h4>Notes</h4>
         		<p>Lorem ipsum dolor sit amet</p>
-    		</div>
+	    		</div>-->
     		<div class="footer">
         		<p>Source: lorem ipsum dolor sit amet</p>
-        		<p>Interactive: Sergio Hernandez/Mashable</p>
-    </div>
-<div id="watermark"></div>
+        		<p>Photos: lorem ipsum dolor sit amet; Illustration: Bob Al-Greene/Mashable; Interactive: Sergio Hernandez/Mashable</p>
+		    </div>
+		<div id="watermark"></div>
 	</footer>
 </body>
 </html>

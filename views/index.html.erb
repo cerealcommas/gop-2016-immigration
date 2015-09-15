@@ -1,23 +1,46 @@
 <% @title = "Republican candidates on abortion" %>
+<style>
+.swiper-container {
+	width: 100%;
+	height: 100px;
+	background-color: #d64946;
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+	text-align: center;
+	min-width: 100px !important;
+}
+
+.swiper-slide button {
+	min-width: 100px;
+	width: 100%;
+}
+</style>
 
 <div class="wrapper">
 <h1>&nbsp;</h1>
 </div>
+
 <script>
 $(document).ready(function () {
   $("#bush").show();
-
-  $("#select-menu").change(function () {
-    d3.selectAll(".candidate")
-    	.style("display", "none");
-	
-	$("#trump")
-    		.fadeIn();
-  })
+  $(".btn-bush").css("opacity", "1");
 });
 
 
 //global vars
+// Global config
+var graphicDefaultWidth = 600;
+var mobileThreshold= 500;
+var isMobile = false;
+
+if (document.body.clientWidth < mobileThreshold) {
+    isMobile = true;
+} else {
+    isMobile = false;
+};
+
 var canvas = d3.select("article");
 var graphic = canvas.append("div").attr("id", "graphic");
 
@@ -105,13 +128,44 @@ var candidates = [
 	}
 ];
 
-
 //Define d
 var d = function(d) { return d; };
 var slug = function(d) { return d.slug; };
 var filename = function(d) { return d.filename; };
 
-//Draw head buttons
+if (document.body.clientWidth < 500) {
+	//render swiper
+	var swipeContainer = graphic
+		.append("div").classed("swiper-container", true);
+
+	var swipeWrapper = swipeContainer
+		.append("div").classed("swiper-wrapper", true);
+
+	var swipeScrollbar = swipeContainer
+		.append("div").classed("swiper-scrollbar", true);
+
+	//draw head buttons
+	var candidateSwiper = swipeWrapper
+		.selectAll(".swiper-slide")
+			.data(candidates)
+				.enter()
+					.append("div")
+					.attr("class", "swiper-slide")
+					.append("button")
+						.attr("style", function(d) { return "background-image: url(images/" + d.slug + ".png);"; })
+					.attr("class", function(d) { return "btn-" + d.slug });
+	//render slides					
+	var swiper = new Swiper ('.swiper-container', {
+		// Optional parameters
+		direction: 'horizontal',
+		freeMode: true,
+		spaceBetween: 5,
+		loop: true,
+		scrollbar: '.swiper-scrollbar',
+		slidesPerView: 6,
+	});
+};
+
 var headsMenu = graphic
 	.append("div")
 	.attr("id", "heads-menu")
@@ -123,7 +177,7 @@ var headsMenu = graphic
 				.attr("style", function(d) { return "background-image: url(images/" + d.slug + ".png);"; })
 				.attr("class", function(d) { return "btn-" + d.slug });
 //Draw select menu
-var selectMenu = graphic
+/*var selectMenu = graphic
 	.append("div")
 	.attr("id", "select-menu")
 	.classed("mobile-only", true)
@@ -133,7 +187,7 @@ var selectMenu = graphic
 		.enter()
 			.append("option")
 			.attr("value", function(d) { return d.slug; })
-			.text(function(d) { return d.name; });
+			.text(function(d) { return d.name; });*/
 
 //Create candidate box
 var candidateBox = graphic.append("div").attr("id", "candidate-container");

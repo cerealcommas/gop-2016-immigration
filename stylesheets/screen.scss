@@ -11,7 +11,6 @@
 }
 
 #heads-menu {
-	//background-color: $rep-red;
 	text-align: center;
 }
 
@@ -23,6 +22,7 @@ button {
 	background-size: 100px 100px;
 	background-repeat: no-repeat;
 	opacity: .5;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 button:hover {
@@ -37,15 +37,6 @@ button:active {
 button:focus {
 	opacity: 1;
 	outline:0;
-}
-
-#select-menu {
-	width: 100%;
-	text-align: center;
-}
-
-#select-menu select {
-	width: 80%;
 }
 
 #candidate-container {
@@ -120,6 +111,15 @@ button:focus {
   content: '';
 }
 
-select {
-	font-size: 16px;
+#watermark {
+    float: right;
+    display: block;
+    width: 100%;
+    height: 1em;
+    background-image: url("//mashgraphics-assets.s3.amazonaws.com/images/logo_mashable.svg");
+    background-size: 6em;
+    background-repeat: no-repeat;
+    background-position: right;
+    filter: grayscale(100%) opacity(40%);
+    -webkit-filter: grayscale(100%) opacity(40%);
 }

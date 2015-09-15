@@ -7,13 +7,29 @@ header {
   background: $white;
   position: relative;
   padding: 1px $body-margin-x;
+  font-family: 'proxima-nova-condensed',Helvetica,Arial,sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 300;
+  color: $meta-gray;
   
   a { @include basic-link(mix($banner-color, white, 20%), $hover: white, $decoration: "plain"); }
   
   h1 {
-    color: $bodytext-black;
+    color: $mashblack;
+    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 2em;
+  }
+
+  p.byline {
+    font-weight: bold;
+    font-size: .9em;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
   }
   .action-link {
     position: absolute;
@@ -32,6 +48,7 @@ header {
 
 section[role=main] {
   padding: 1px $body-margin-x;
+  margin-bottom: 15em;
 }
 
 body > footer {
