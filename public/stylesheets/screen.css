@@ -214,14 +214,14 @@ header {
   margin-bottom: 1em;
 }
 header a:link {
-  color: #555555;
+  color: white;
   text-decoration: none;
 }
 header a:visited {
-  color: #555555;
+  color: white;
 }
 header a:hover {
-  color: #555555;
+  color: #FFFFFF;
   text-decoration: underline;
 }
 header h1 {
@@ -348,7 +348,7 @@ button:focus {
   float: left;
 }
 
-@media all and (min-width: 500px) {
+@media all and (min-width: 851px) {
   .desktop-only {
     display: inline;
   }
@@ -361,13 +361,17 @@ button:focus {
     display: none;
   }
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 850px) {
   .mobile-only {
     display: inline;
   }
 
   .desktop-only {
     display: none;
+  }
+
+  header a:link, header a:visited, header a:hover, header a:active {
+    color: #636466;
   }
 }
 .wrapper {

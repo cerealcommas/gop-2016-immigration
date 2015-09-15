@@ -80,7 +80,7 @@ button:focus {
 }
 
 // For desktop:
-@media all and (min-width: 500px) {
+@media all and (min-width: 851px) {
 		.desktop-only {
 				display: inline;
 		}
@@ -93,12 +93,16 @@ button:focus {
 		}
 }
 // For mobile:
-@media all and (max-width: 500px) {
+@media all and (max-width: 850px) {
 		.mobile-only {
 				display: inline;
 		}
 		.desktop-only {
 				display: none;
+		}
+
+		header a:link, header a:visited, header a:hover, header a:active {
+			color: #636466;
 		}
 }
 

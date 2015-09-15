@@ -14,7 +14,7 @@ header {
   color: $meta-gray;
   margin-bottom: 1em;
   
-  a { @include basic-link(mix($bodytext-black, $bodytext-black), $hover: $bodytext-black, $decoration: "plain"); }
+  a { @include basic-link(mix($white, $white), $hover: $white, $decoration: "plain"); }
   
   h1 {
     color: $mashblack;
