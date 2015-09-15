@@ -232,13 +232,33 @@ $(".btn-trump").on("click"), function() {
 
 */
 
+jQuery.fn.fadeThenSlideToggle = function(speed, easing, callback) {
+  if (this.is(":hidden")) {
+    return this.slideDown(speed, easing).fadeTo(speed, 1, easing, callback);
+  } else {
+    return this.fadeTo(speed, 0, easing).slideUp(speed, easing, callback);
+  }
+};
+
 $(".btn-bush").on("click", function() { 
+		//mute buttons
 		d3.selectAll("button").style("opacity", ".5");
+		//highlight this button
 		d3.select(this).style("opacity", "1");
+		//hide all candidate cards
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		//hide lead img
+		$(".wrapper").fadeTo("slow", 0.00, function() { //fade
+             		$(this).slideUp("slow", function() { //slide up
+                 		$(this).remove(); //then remove from the DOM
+                 	});
+             	});
+
+		//show this candidate card
 		$("#bush").fadeIn();
+		//print slogan to console
 		console.log("#AllInForJeb");
 	});
 
@@ -247,6 +267,12 @@ $(".btn-carson").on("click", function() {
 		d3.select(this).style("opacity", "1");
 		d3.selectAll(".candidate")
 			.style("display", "none");
+
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
 
 		$("#carson").fadeIn();
 		console.log("Heal + Inspire + Revive");
@@ -258,6 +284,12 @@ $(".btn-christie").on("click", function() {
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
+
 		$("#christie").fadeIn();
 		console.log("Telling it like it is");
 	});
@@ -267,6 +299,12 @@ $(".btn-cruz").on("click", function() {
 		d3.select(this).style("opacity", "1");
 		d3.selectAll(".candidate")
 			.style("display", "none");
+
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
 
 		$("#cruz").fadeIn();
 		console.log("Reigniting the Promise of America");
@@ -278,6 +316,12 @@ $(".btn-fiorina").on("click", function() {
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
+
 		$("#fiorina").fadeIn();
 		console.log("New Possibilities. Real Leadership.");
 	});
@@ -288,6 +332,12 @@ $(".btn-gilmore").on("click", function() {
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
+
 		$("#gilmore").fadeIn();
 	});
 
@@ -296,6 +346,12 @@ $(".btn-graham").on("click", function() {
 		d3.select(this).style("opacity", "1");
 		d3.selectAll(".candidate")
 			.style("display", "none");
+
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
 
 		$("#graham").fadeIn();
 		console.log("Ready To Be Commander-in-Chief On Day One");
@@ -307,6 +363,12 @@ $(".btn-huckabee").on("click", function() {
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
+
 		$("#huckabee").fadeIn();
 		console.log("Hope to Higher Ground");
 	});
@@ -317,6 +379,12 @@ $(".btn-jindal").on("click", function() {
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
+
 		$("#jindal").fadeIn();
 	});
 
@@ -325,6 +393,12 @@ $(".btn-kasich").on("click", function() {
 		d3.select(this).style("opacity", "1");
 		d3.selectAll(".candidate")
 			.style("display", "none");
+
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
 
 		$("#kasich").fadeIn();
 		console.log("Kasich for Us");
@@ -336,6 +410,12 @@ $(".btn-pataki").on("click", function() {
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
+
 		$("#pataki").fadeIn();
 		console.log("People over politics");
 	});
@@ -345,6 +425,12 @@ $(".btn-paul").on("click", function() {
 		d3.select(this).style("opacity", "1");
 		d3.selectAll(".candidate")
 			.style("display", "none");
+
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
 
 		$("#paul").fadeIn();
 		console.log("Defeat the Washington machine. Unleash the American dream.");
@@ -356,6 +442,12 @@ $(".btn-rubio").on("click", function() {
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
+
 		$("#rubio").fadeIn();
 		console.log("A New American Century");
 	});
@@ -365,6 +457,12 @@ $(".btn-santorum").on("click", function() {
 		d3.select(this).style("opacity", "1");
 		d3.selectAll(".candidate")
 			.style("display", "none");
+
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
 
 		$("#santorum").fadeIn();
 		console.log("Restore the American Dream for hardworking families");
@@ -378,6 +476,12 @@ $(".btn-trump").on("click", function() {
 		d3.selectAll(".candidate")
 			.style("display", "none");
 
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
+
 		$("#trump").fadeIn();
 		console.log("Make America Great Again!");
 	});
@@ -387,6 +491,12 @@ $(".btn-walker").on("click", function() {
 		d3.select(this).style("opacity", "1");
 		d3.selectAll(".candidate")
 			.style("display", "none");
+
+		$(".wrapper").fadeTo("slow", 0.00, function() {
+             		$(this).slideUp("slow", function() {
+                 		$(this).remove();
+                 	});
+             	});
 
 		$("#walker").fadeIn();
 		console.log("Reform. Growth. Safety.");
