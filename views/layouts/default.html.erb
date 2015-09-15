@@ -113,13 +113,22 @@
 				padding-top:.5em;
 				color:#ffffff;
 			}
+
+			#g-ai0-1 {
+				top:55%;left:3%;width:75%;
+			}
+			@media all and (min-width: 768px) and (max-width: 850px) {
+				#g-ai0-1 {
+					top: 0%;
+				}
+			}
 		</style>
 		<div id='g-header_jpg-Artboard_1-graphic'>
 			<img id='g-ai0-0'
 				class='g-aiImg'
 				src='images/header.jpg'
 				/>
-			<div id='g-ai0-1' class='g-Layer_1 g-aiAbs' style='top:55%;left:3%;width:75%;'>
+			<div id='g-ai0-1' class='g-Layer_1 g-aiAbs'>
 				<p class='g-aiPstyle0'><%= @hed %></p>
 				<p class='g-aiPstyle1'>By <a href="//mashable.com/people/juanasummers/">Juana Summers</a> and <a href="//mashable.com/people/sergiohernandez/">Sergio Hernandez</a></p>
 				<p class='g-aiPstyle2'><%= @guff %></p>

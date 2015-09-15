@@ -4,6 +4,7 @@
 	height: 100px;
 	background-color: #d64946;
 	margin: 1em 0;
+	display: none;
 }
 .swiper-wrapper {
 }
@@ -174,7 +175,7 @@ var headsMenu = graphic
 				.attr("style", function(d) { return "background-image: url(images/candidates/" + d.slug + ".png);"; })
 				.attr("class", function(d) { return "btn-" + d.slug });
 //Draw select menu
-/*var selectMenu = graphic
+var selectMenu = graphic
 	.append("div")
 	.attr("id", "select-menu")
 	.classed("mobile-only", true)
@@ -184,7 +185,7 @@ var headsMenu = graphic
 		.enter()
 			.append("option")
 			.attr("value", function(d) { return d.slug; })
-			.text(function(d) { return d.name; });*/
+			.text(function(d) { return d.name; });
 
 //Create candidate box
 var candidateBox = graphic.append("div").attr("id", "candidate-container");
