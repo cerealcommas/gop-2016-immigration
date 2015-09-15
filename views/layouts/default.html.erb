@@ -1,5 +1,5 @@
 <% @hed = "Republican candidates on immigration" %>
-<% @guff= "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum orci sit amet purus imperdiet, ut varius nunc ultrices. Duis pellentesque erat urna, et ornare ligula finibus eu." %>
+<% @guff= "Immigration has become a litmus test for social conservatives in recent presidential elections. … <span class='mobile-only'>Swipe and tap</span><span class='desktop-only'>Click</span> on a candidate’s head to see where they stand on immigration." %>
 <% @org = "Mashable" %>
 <% @org_twitter = "@mashable" %>
 <% @author = "Juana Summers and Sergio Hernandez" %>
@@ -50,10 +50,9 @@
 	<script>try{Typekit.load();}catch(e){}</script>
 	
 	<header>
-		<div class="wrapper">&nbsp;
-		</div>
+		<img src="images/header.jpg" id="lead-img" />
 		<h1><%= @hed %></h1>
-		<p class="byline">By <span style="text-transform: uppercase;">Juana Summers</span> and <span style="text-transform: uppercase;">Sergio Hernandez</span></p>
+		<p class="byline">By <span style="text-transform: uppercase;"><a href="//mashable.com/people/juanasummers/">Juana Summers</a></span> and <span style="text-transform: uppercase;"><a href="//mashable.com/people/sergiohernandez/">Sergio Hernandez</a></span></p>
 		<h2><%= @guff %></h2>
 	</header>
 	
@@ -67,8 +66,8 @@
         		<p>Lorem ipsum dolor sit amet</p>
 	    		</div>-->
     		<div class="footer">
-        		<p>Source: lorem ipsum dolor sit amet</p>
-        		<p>Photos: Corbis Images, Johnny Simon/Mashable; Illustration: Bob Al-Greene/Mashable; Interactive: Sergio Hernandez/Mashable</p>
+        		<p>Source: lorem ipsum dolor sit amet.</p>
+        		<p>Photos: Corbis Images, <a href="//mashable.com/people/johnnysimon">Johnny Simon</a>/Mashable. Illustration: <a href="//mashable.com/people/bob-al-greene">Bob Al-Greene</a>/Mashable. Interactive: <a href="//mashable.com/people/sergiohernandez">Sergio Hernandez</a>/Mashable.</p>
 		    </div>
 		<div id="watermark"></div>
 	</footer>

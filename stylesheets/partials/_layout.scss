@@ -12,8 +12,9 @@ header {
   font-style: normal;
   font-weight: 300;
   color: $meta-gray;
+  margin-bottom: 1em;
   
-  a { @include basic-link(mix($banner-color, white, 20%), $hover: white, $decoration: "plain"); }
+  a { @include basic-link(mix($bodytext-black, $bodytext-black), $hover: $bodytext-black, $decoration: "plain"); }
   
   h1 {
     color: $mashblack;
@@ -24,7 +25,12 @@ header {
 
   p.byline {
     font-weight: bold;
-    font-size: .9em;
+    text-transform: uppercase;
+    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    color: #636466;
+    margin-top: .5em;
+    margin-bottom: .5em;
   }
 
   h2 {
@@ -48,13 +54,12 @@ header {
 
 section[role=main] {
   padding: 1px $body-margin-x;
-  margin-bottom: 15em;
 }
 
 body > footer {
   padding: 0 $body-margin-x 20px;
   font-size: 90%;
-  color: $quiet-color;
-  a { @include basic-link($text-color); }
+  color: $meta-gray;
+  a { @include basic-link($meta-gray, $decoration: "plain"); }
   p { margin: 1em 0; }
 }

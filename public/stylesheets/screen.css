@@ -211,16 +211,17 @@ header {
   font-style: normal;
   font-weight: 300;
   color: #777777;
+  margin-bottom: 1em;
 }
 header a:link {
-  color: #cceffc;
+  color: #555555;
   text-decoration: none;
 }
 header a:visited {
-  color: #cceffc;
+  color: #555555;
 }
 header a:hover {
-  color: white;
+  color: #555555;
   text-decoration: underline;
 }
 header h1 {
@@ -231,7 +232,12 @@ header h1 {
 }
 header p.byline {
   font-weight: bold;
-  font-size: .9em;
+  text-transform: uppercase;
+  font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  color: #636466;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 header h2 {
   margin: 0;
@@ -257,24 +263,23 @@ header .action-link a:after {
 
 section[role=main] {
   padding: 1px 5%;
-  margin-bottom: 15em;
 }
 
 body > footer {
   padding: 0 5% 20px;
   font-size: 90%;
-  color: #a2a2a2;
+  color: #777777;
 }
 body > footer a:link {
-  color: #555555;
-  text-decoration: underline;
+  color: #777777;
+  text-decoration: none;
 }
 body > footer a:visited {
-  color: #555555;
+  color: #777777;
 }
 body > footer a:hover {
-  color: #555555;
-  text-decoration: none;
+  color: #777777;
+  text-decoration: underline;
 }
 body > footer p {
   margin: 1em 0;
@@ -282,10 +287,16 @@ body > footer p {
 
 #graphic {
   width: 100%;
+  padding-top: 1em;
+  border-top: solid 1px #555555;
 }
 
 #heads-menu {
   text-align: center;
+}
+
+#lead-img {
+  width: 100%;
 }
 
 button {
@@ -315,6 +326,7 @@ button:focus {
 
 #candidate-container {
   width: 100%;
+  display: inline-block;
 }
 
 .candidate {
@@ -363,7 +375,7 @@ button:focus {
   /* whatever width you want */
   display: inline-block;
   position: relative;
-  border: dashed 1px gray;
+  border: none;
   margin: 1em 0;
   background-image: url("/images/header.jpg");
   height: 972px;
