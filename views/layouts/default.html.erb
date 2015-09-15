@@ -1,3 +1,10 @@
+<% @hed = "Republican candidates on immigration" %>
+<% @guff= "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum orci sit amet purus imperdiet, ut varius nunc ultrices. Duis pellentesque erat urna, et ornare ligula finibus eu." %>
+<% @org = "Mashable" %>
+<% @org_twitter = "@mashable" %>
+<% @author = "Juana Summers and Sergio Hernandez" %>
+<% @author_twitter = "@mashable" %>
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -10,7 +17,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="robots" content="noindex" />
 	
-	<title>Mashable : Graphic : <%= @title %></title>
+	<title>Mashable : Graphic : <%= @hed %></title>
 
 	<!-- stylsheets -->
 	<link rel="stylesheet" href="stylesheets/screen.css">
@@ -18,6 +25,17 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="stylesheets/swiper.min.css">
+
+	<!-- Twitter card meta tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="<%= @org_twitter %>" />
+	<meta name="twitter:creator" content="<%= @org_twitter %>">
+	<meta name="twitter:title" content="<%= @hed %>" />
+	<meta name="twitter:description" content="<%= @guff %>">
+	<meta name="twitter:image" content="images/fallback.png" />
+
+	<link rel="shortcut icon" href="//mashable.com/favicon.ico" />
+    	<base target="_blank" />
 
 </head>
 <body>
@@ -32,9 +50,11 @@
 	<script>try{Typekit.load();}catch(e){}</script>
 	
 	<header>
-		<h1><%= @title %></h1>
+		<div class="wrapper">&nbsp;
+		</div>
+		<h1><%= @hed %></h1>
 		<p class="byline">By <span style="text-transform: uppercase;">Juana Summers</span> and <span style="text-transform: uppercase;">Sergio Hernandez</span></p>
-		<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum orci sit amet purus imperdiet, ut varius nunc ultrices. Duis pellentesque erat urna, et ornare ligula finibus eu.</h2>
+		<h2><%= @guff %></h2>
 	</header>
 	
 	<section role="main">
@@ -48,7 +68,7 @@
 	    		</div>-->
     		<div class="footer">
         		<p>Source: lorem ipsum dolor sit amet</p>
-        		<p>Photos: lorem ipsum dolor sit amet; Illustration: Bob Al-Greene/Mashable; Interactive: Sergio Hernandez/Mashable</p>
+        		<p>Photos: Corbis Images, Johnny Simon/Mashable; Illustration: Bob Al-Greene/Mashable; Interactive: Sergio Hernandez/Mashable</p>
 		    </div>
 		<div id="watermark"></div>
 	</footer>
