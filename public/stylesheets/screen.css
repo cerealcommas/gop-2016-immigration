@@ -348,6 +348,13 @@ button:focus {
   float: left;
 }
 
+.swiper-slide img {
+  height: 100px;
+  width: 100px;
+  display: block;
+  float: left;
+}
+
 @media all and (max-width: 767px) {
   .mobile-only {
     display: inline;
@@ -417,4 +424,21 @@ button:focus {
 #select-menu select {
   width: 100%;
   font-size: 15px;
+}
+
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide {
+  background-color: #fff;
+  margin-bottom: 1em;
+}
+
+.swiper-pagination-bullet {
+  background: #555 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00aeff !important;
 }

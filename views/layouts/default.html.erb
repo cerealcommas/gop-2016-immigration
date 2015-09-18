@@ -1,5 +1,5 @@
 <% @hed = "Republican candidates on immigration" %>
-<% @guff= "Immigration has become a litmus test for social conservatives in recent presidential elections. … <span class='mobile-only'>Select a candidate from the menu</span><span class='desktop-only'>Click on a candidate’s head</span> to see where they stand on immigration." %>
+<% @guff= "Immigration has become a litmus test for social conservatives in recent presidential elections. … <span class='mobile-only'>Select a candidate from the menu or swipe</span><span class='desktop-only'>Click on a candidate’s head</span> to see where they stand on immigration." %>
 <% @org = "Mashable" %>
 <% @org_twitter = "@mashable" %>
 <% @author = "Juana Summers and Sergio Hernandez" %>
@@ -60,5 +60,17 @@
 	<footer>
 		<%= render "footer" %>
 	</footer>
+<script>        
+  var swiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    // If we need pagination
+    pagination: '.swiper-pagination',
+    slidesPerView: 1,
+    centeredSlides: true
+  })        
+  </script>
+
 </body>
 </html>

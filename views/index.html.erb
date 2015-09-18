@@ -427,10 +427,36 @@ $(".btn-walker").on("click", function() {
 //get value
 $("select").on("change", function() {
 	//hide all candidats
+	$(".swiper-container").hide();
 	$(".candidate").hide();
 	//show this candidate
 	$("#" + this.value)
 		.fadeIn();
 })
 
+</script>
+<div class="mobile-only">
+	<div class="swiper-container">
+		<div class="swiper-wrapper"></div>
+		<div class="swiper-pagination"></div>
+	</div>
+</div>
+
+
+<script>
+
+var candidateSlide = d3.select(".swiper-wrapper")
+	.selectAll("div")
+		.data(candidates)
+			.enter()
+				.append("div").classed("swiper-slide", true);
+
+candidateSlide.append("h1").text(function(d) { return d.name; });
+
+candidateSlide
+	.append("img")
+	.classed("mobile-only", true)
+	.attr("src", function(d) { return "images/candidates/" + d.slug + ".png"; });
+
+candidateSlide.append("p").text(function(d) { return d.platform; });
 </script>
